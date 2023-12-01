@@ -72,14 +72,8 @@ export default function App() {
 
   return (
     <>
-<<<<<<< Updated upstream
       <button onClick={loadData}>Load API Data</button>
       <p>{String(category)}</p>
-=======
-      <h1>Welcome to Quiz Quest!</h1>
-      <button onClick={loadData}>Lets Get Started!</button>
-      <p>{data}</p>
->>>>>>> Stashed changes
     </>
   );
 }
