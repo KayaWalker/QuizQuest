@@ -8,20 +8,64 @@ export default function App() {
     updateScore(score + 1)
   }
 
-  const [data, setData] = useState([]);
+  const [category, setCategory] = useState(0);
+
+  function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
+  }
 
   function loadData(){
-    const url = "https://opentdb.com/api.php?amount=10";
+      const categories = [22,25,32,27];
 
-    let testVariable;
+      let newCategory = getRandomInt(0,4);
+      console.log(newCategory);
 
-    fetch(url)
-      .then((response) => { return response.json() })
-      .then(function(apiResponse) {
-        testVariable = apiResponse
-        console.log(testVariable)
-        setData(apiResponse.results)
-      });
+      setCategory(categories[newCategory])
+
+
+    // const geoURL = "https://opentdb.com/api.php?amount=4&category=22&type=multiple";
+    // const artURL = "https://opentdb.com/api.php?amount=4&category=25&type=multiple";
+    // const tvURL = "https://opentdb.com/api.php?amount=4&category=32&type=multiple";
+    // const animalURL = "https://opentdb.com/api.php?amount=4&category=27&type=multiple";
+
+    // let testVariableOne = [];
+    // let testVariableTwo = [];
+    // let testVariableThree = [];
+    // let testVariableFour = [];
+
+    // fetch(geoURL)
+    //   .then((response) => { return response.json() })
+    //   .then(function(apiResponse) {
+    //     testVariableOne.push(apiResponse.results)
+    //     console.log(testVariableOne)
+    //     //setData(apiResponse.results)
+    //   });
+
+    // fetch(artURL)
+    //   .then((response) => { return response.json() })
+    //   .then(function(apiResponse) {
+    //     testVariableTwo.push(apiResponse.results)
+    //     console.log(testVariableTwo)
+    //     //setData(apiResponse.results)
+    // });
+
+    // fetch(tvURL)
+    //   .then((response) => { return response.json() })
+    //   .then(function(apiResponse) {
+    //     testVariableThree.push(apiResponse.results)
+    //     console.log(testVariableThree)
+    //     //setData(apiResponse.results)
+    // });
+
+    // fetch(animalURL)
+    //   .then((response) => { return response.json() })
+    //   .then(function(apiResponse) {
+    //     testVariableFour.push(apiResponse.results)
+    //     console.log(testVariableFour)
+    //     //setData(apiResponse.results)
+    // });
 
   }
 
@@ -29,7 +73,7 @@ export default function App() {
   return (
     <>
       <button onClick={loadData}>Load API Data</button>
-      <p>{data}</p>
+      <p>{String(category)}</p>
     </>
   );
 
