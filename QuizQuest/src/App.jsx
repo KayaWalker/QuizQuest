@@ -23,34 +23,8 @@ export default function App() {
         setData(apiResponse.results)
       });
 
-    //return(console.log(testVariable))
-
   }
 
-  // const url = "https://opentdb.com/api.php?amount=10";
-  // //const [data, setData] = useState([]);
-
-  // let testVariable
-
-  // fetch(url)
-  //   .then((response) => { return response.json() })
-  //   .then(function(apiResponse) {
-  //       setData(apiResponse)
-  //       testVariable = apiResponse
-  //       //displayBooks(data.works);
-  // });
-
-  // console.log(data)
-
-  // function setData (data){
-  //   console.log("Inside setData")
-  // }
-
- //fetchInfo()
-
-  // useEffect(() => {
-  //   fetchInfo();
-  // }, []);
 
   return (
     <>
