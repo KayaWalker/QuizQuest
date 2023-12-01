@@ -32,6 +32,4 @@ export default function App() {
       <p>{data}</p>
     </>
   );
-
-//return (0);
 }
