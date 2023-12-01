@@ -76,6 +76,4 @@ export default function App() {
       <p>{String(category)}</p>
     </>
   );
-
-//return (0);
 }
