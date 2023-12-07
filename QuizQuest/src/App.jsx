@@ -19,7 +19,7 @@ export default function App() {
 
   //function to update the score
   //This function should be passed down into Category.jsx to be then passed to Question.jsx
-  function updateScore(){
+  function incrementScore(){
     updateScore(score + 1)
   }
 
