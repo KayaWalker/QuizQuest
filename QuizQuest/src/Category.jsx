@@ -1,11 +1,9 @@
 //TO-DO IN CATEGORY.JSX FILE
-//Get the updateScore function from App.jsx
-//Pass down the updateScore function to Question.jsx
 
 import { useState } from 'react';
 import Question from './Question';
 
-export default function Category({score}){
+export default function Category({updateScore}){
     
     //Sets the question state. 
     //question is an object read in from the API
@@ -50,7 +48,7 @@ export default function Category({score}){
     return(
         <>
             <button onClick={load}>Load Question</button>
-            <Question question={question} display={display} changeDisplay={changeDisplay}/>
+            <Question question={question} display={display} changeDisplay={changeDisplay} updateScore={updateScore}/>
         </>
         
     );

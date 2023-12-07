@@ -5,7 +5,6 @@
 
 //TO-DO IN APP.JSX FILE
 //Display score
-//Pass down the updateScore function to Category
 
 
 
@@ -20,13 +19,13 @@ export default function App() {
 
   //function to update the score
   //This function should be passed down into Category.jsx to be then passed to Question.jsx
-  function incrementScore(){
+  function updateScore(){
     updateScore(score + 1)
   }
 
   return (
     <>
-      <Category score={score}></Category>
+      <Category updateScore={updateScore}></Category>
     </>
   );
 }

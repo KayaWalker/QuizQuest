@@ -6,7 +6,7 @@
 import {useState, useEffect} from 'react'
 
 
-export default function Question({question, display, changeDisplay, incrementScore}){
+export default function Question({question, display, changeDisplay, updateScore}){
 
     //The if-else statement below listens for the disply state to change and if there is data in question it will display the question and answers
     // otherwise it displays "No Question Loaded" for debugging. That text can be deleted for the final product.
