@@ -20,10 +20,13 @@ export default function Question({question, display, changeDisplay, updateScore}
         return (
             <>
                 <p dangerouslySetInnerHTML={{__html:writtenQuestion}}></p>
-                <button dangerouslySetInnerHTML={{__html:correctAnswer}}></button>
-                <button dangerouslySetInnerHTML={{__html:wrongAnswers[0]}}></button>
-                <button dangerouslySetInnerHTML={{__html:wrongAnswers[1]}}></button>
-                <button dangerouslySetInnerHTML={{__html:wrongAnswers[2]}}></button>
+                <div id="answer-container">
+                    <button dangerouslySetInnerHTML={{__html:correctAnswer}}></button>
+                    <button dangerouslySetInnerHTML={{__html:wrongAnswers[0]}}></button>
+                    <button dangerouslySetInnerHTML={{__html:wrongAnswers[1]}}></button>
+                    <button dangerouslySetInnerHTML={{__html:wrongAnswers[2]}}></button>
+                </div>
+                
         
             </>
             

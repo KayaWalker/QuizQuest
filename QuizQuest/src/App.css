@@ -19,6 +19,8 @@ h1{
 #mainBtn{
     color:black;
     background-color: white;
+    position: relative;
+    top: 100px;
 }
 button{
     margin: 2px;
