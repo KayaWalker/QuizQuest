@@ -47,8 +47,10 @@ export default function Category({updateScore}){
     
     return(
         <>
-            <button onClick={load}>Load Question</button>
+            <h1>Quiz Quest</h1>
             <Question question={question} display={display} changeDisplay={changeDisplay} updateScore={updateScore}/>
+            <button id="mainBtn" onClick={load}>Load Question</button>
+            
         </>
         
     );
