@@ -1,5 +1,5 @@
 *{
-    margin: auto auto;
+    margin: 0 auto;
     text-align: center;
     color:black;
 }
@@ -14,6 +14,7 @@ h1{
     background-color: white;
     padding: 20px;
     border-radius: 25px;
+    width: 450px;
 }
 #mainBtn{
     color:black;
