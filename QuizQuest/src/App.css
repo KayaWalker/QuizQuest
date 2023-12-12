@@ -1,18 +1,37 @@
 *{
-    margin: auto auto;
+    margin: 0 auto;
     text-align: center;
+    color:black;
 }
 body {
     background-color: #87DDF0;
 }
 h1{
-    margin-bottom: 250px;
+    position: relative;
+    margin-bottom: 10px;
+    bottom: 150px;
     color: black;
     background-color: white;
     padding: 20px;
     border-radius: 25px;
+    width: 450px;
 }
 #mainBtn{
     color:black;
     background-color: white;
+    position: relative;
+    top: 100px;
+}
+button{
+    margin: 2px;
+    position: relative;
+    bottom: 100px;
+}
+p{
+    width: 60%;
+    position: relative;
+    bottom: 100px;
+    margin-bottom: 20px;
+    background-color: white;
+    padding: 20px 10px 20px;
 }
