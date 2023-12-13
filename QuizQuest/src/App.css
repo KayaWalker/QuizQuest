@@ -49,3 +49,7 @@ h1{
     margin: auto;
     font-size: 100%;
 }
+button:hover{
+    background-color: lightgray;
+    font-size: 110%;
+}
