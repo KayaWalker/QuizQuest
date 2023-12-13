@@ -13,6 +13,7 @@ export default function Question({question, display, answerOrder, changeDisplay,
     if (display == true){
 
         //Separates the question object into individual variables
+        let writtenCategory = question.category; //string
         let writtenQuestion = question.question; //string
         let correctAnswer = question.correct_answer; //string
         let wrongAnswers = question.incorrect_answers; //array of strings of size 3
@@ -45,6 +46,7 @@ export default function Question({question, display, answerOrder, changeDisplay,
         //Returns the question and the four answer options in random order
         return (
             <>
+                <h1 class='category' dangerouslySetInnerHTML={{__html:writtenCategory}}></h1>
                 <p class='question' dangerouslySetInnerHTML={{__html:writtenQuestion}}></p>
                 <div class='container'>
                     <button class='child' dangerouslySetInnerHTML={{__html:allAnswers[order[0]]}} onClick={()=>checkForCorrectAnswer(allAnswers[order[0]])}></button>
