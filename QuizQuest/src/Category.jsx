@@ -3,6 +3,18 @@
 import { useState } from 'react';
 import Question from './Question';
 
+function Title({label, gameStart, gameEnd}) {
+    if (gameStart) {
+        return label;
+    }
+    else if (gameEnd) {
+        return label;
+    }
+    else {
+        return label;
+    }
+}
+
 export default function Category({updateScore}){
     
     //Sets the question state. 
