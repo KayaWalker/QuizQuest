@@ -4,6 +4,8 @@ import { useState } from 'react';
 import Question from './Question';
 
 export default function Category({updateScore}){
+
+    const [start, changeMode] = useState(true);
     
     //Sets the question state. 
     //question is an object read in from the API
@@ -42,7 +44,9 @@ export default function Category({updateScore}){
     //Calls the API for a random category and sets the question state
     //1 second delay
     function load(){
+
         setTimeout(() => {
+            
             let order = getRandomArrayIndex();
 
             changeAnswerOrder(order);
@@ -61,9 +65,31 @@ export default function Category({updateScore}){
                 changeDisplay(true) //sets the question display state
             });
         }, 1000);
+        
     }
     
-    if (display == true) {
+    if (display == false) {
+        if(start == true){
+            return(
+                <>
+                <h1>Quiz Quest</h1>
+                <div>
+                    <button id="mainBtn" onClick={load}>Start</button>
+                </div>
+                </>
+            );
+        }
+        else{
+            return(
+                <>
+                <div>
+                    <button id="mainBtn" onClick={load}>Next Question</button>
+                </div>
+                </>
+            );
+        }
+
+    } else {
         return(
             <div>
              <Question 
@@ -74,15 +100,6 @@ export default function Category({updateScore}){
              updateScore={updateScore}
              />
             </div>
-        );
-    } else {
-        return(
-            <>
-            <h1>Quiz Quest</h1>
-            <div>
-                <button id="mainBtn" onClick={load}>Generate</button>
-            </div>
-            </>
         );
     }
 }
