@@ -63,11 +63,8 @@ export default function Category({updateScore}){
         }, 1000);
     }
     
-    
-    
-    return(
-        <>
-            <h1>Quiz Quest</h1>
+    if (display == true) {
+        return(
             <div>
              <Question 
              question={question} 
@@ -77,13 +74,15 @@ export default function Category({updateScore}){
              updateScore={updateScore}
              />
             </div>
+        );
+    } else {
+        return(
+            <>
+            <h1>Quiz Quest</h1>
             <div>
                 <button id="mainBtn" onClick={load}>Generate</button>
             </div>
-            
-            
-        </>
-        
-    );
-
+            </>
+        );
+    }
 }
