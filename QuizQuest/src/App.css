@@ -11,12 +11,20 @@ h1{
     background-color: white;
     padding: 20px;
     border-radius: 25px;
-    width: 450px;
+    width: 600px;
 }
 #mainBtn{
     color:black;
     background-color: white;
     margin-top: 20px;
+}
+#mainBtn:hover{
+    background-color: lightgray;
+    font-size: 110%;
+}
+#mainBtn:focus{
+    background-color: gray;
+    font-size: 110%;
 }
 .question{
     margin-top: 40px;
@@ -52,4 +60,18 @@ h1{
 button:hover{
     background-color: lightgray;
     font-size: 110%;
+}
+button:focus{
+    background-color: gray;
+    font-size: 110%;
+}
+#score{
+    background-color: white;
+    padding: 15px;
+    width: 200px;
+    border-bottom-left-radius: 10px;
+    position: absolute;
+    top: 0;
+    right: 0px;
+    font-size: x-large;
 }
