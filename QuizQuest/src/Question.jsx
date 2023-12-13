@@ -12,7 +12,7 @@ export default function Question({question, display, answerOrder, changeDisplay,
     // otherwise it displays "No Question Loaded" for debugging. That text can be deleted for the final product.
     if (display == true){
 
-          //Separates the question object into individual variables
+        //Separates the question object into individual variables
         let writtenQuestion = question.question; //string
         let correctAnswer = question.correct_answer; //string
         let wrongAnswers = question.incorrect_answers; //array of strings of size 3
@@ -35,14 +35,10 @@ export default function Question({question, display, answerOrder, changeDisplay,
             if(answer == correctAnswer){ //calls update score
                 updateScore()
                 console.log("Correct Score")
-                setTimeout(() => {
-                    changeDisplay(false)
-                }, 1000);
-                //TO DO: call the 'next screen' that has the next button inbetween questions
+                changeDisplay(false)
             }else{
                 console.log("Wrong Answer")
                 changeDisplay(false)
-                //TO DO: call the 'next screen' that has the next button inbetween questions
             }
         }
 

@@ -40,26 +40,27 @@ export default function Category({updateScore}){
     
     //Called when the button is pressed
     //Calls the API for a random category and sets the question state
+    //1 second delay
     function load(){
+        setTimeout(() => {
+            let order = getRandomArrayIndex();
 
-        let order = getRandomArrayIndex();
+            changeAnswerOrder(order);
 
-        changeAnswerOrder(order);
+            //The code section below sets the URL for the API for a random category
+            let categoryIndex = getRandomInt(0,4);
+            let category = categories[categoryIndex];
+            const URL = `https://opentdb.com/api.php?amount=1&category=${category}&type=multiple`;
 
-        //The code section below sets the URL for the API for a random category
-        let categoryIndex = getRandomInt(0,4);
-        let category = categories[categoryIndex];
-        const URL = `https://opentdb.com/api.php?amount=1&category=${category}&type=multiple`;
-
-        //Calling the API
-        fetch(URL)
-          .then((response) => { return response.json() })
-          .then(function(apiResponse) {
-            changeQuestion(apiResponse.results[0]) //sets the question state
-            console.log(apiResponse.results[0])
-            changeDisplay(true) //sets the question display state
-          });
-        
+            //Calling the API
+            fetch(URL)
+            .then((response) => { return response.json() })
+            .then(function(apiResponse) {
+                changeQuestion(apiResponse.results[0]) //sets the question state
+                console.log(apiResponse.results[0])
+                changeDisplay(true) //sets the question display state
+            });
+        }, 1000);
     }
     
     
