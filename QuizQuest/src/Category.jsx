@@ -83,8 +83,6 @@ export default function Category({updateScore}){
             );
         }
         else{
-            if(correct)
-            {}
             return(
                 <>
                 <div>
@@ -104,12 +102,9 @@ export default function Category({updateScore}){
              answerOrder={answerOrder} 
              changeDisplay={changeDisplay} 
              updateScore={updateScore}
-<<<<<<< Updated upstream
              changeMode={changeMode}
              start={start}
-=======
              checkCorrect={checkCorrect}
->>>>>>> Stashed changes
              />
             </div>
         );
