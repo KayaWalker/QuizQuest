@@ -27,7 +27,7 @@ export default function App() {
   return (
     <>
       <Category updateScore={incrementScore}></Category>
-      <p id='score'>Score:{score}</p>
+      <p id='score'>Score: {score}</p>
     </>
   );
 }
