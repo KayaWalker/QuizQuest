@@ -55,14 +55,7 @@ export default function Question({question, display, answerOrder, changeDisplay,
         
             </>
             
-          );
-    
-    }else{
-        return(
-            <>
-            <p>No Question Loaded In Yet</p>
-            </>
-        );
+          );    
     }
 
 
