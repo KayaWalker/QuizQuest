@@ -1,10 +1,5 @@
 //TO-DO IN IDK WHICH FILE
-//Figure out welcome screen (note I'm 90% sure that the Category.jsx button can be used as the start and next button)
-//Figure out next screen (note I'm 90% sure that the Category.jsx button can be used as the start and next button)
 //Figure out an end screen when the score reaches like 10?
-
-//TO-DO IN APP.JSX FILE
-//Display score
 
 
 import { useState } from 'react';
@@ -18,16 +13,26 @@ export default function App() {
   //Sets the score state
   const [score, updateScore] = useState(0);
 
+  const [start, changeMode] = useState(true);
+
   //function to update the score
   //This function should be passed down into Category.jsx to be then passed to Question.jsx
   function incrementScore(){
     updateScore(score + 1);
   }
 
-  return (
-    <>
-      <Category updateScore={incrementScore}></Category>
-      <p id='score'>Score: {score}</p>
-    </>
-  );
+  if (start) {
+    return (
+      <>
+        <Category updateScore={incrementScore} changeMode={changeMode} start={start}></Category>
+      </>
+    );
+  } else {
+    return (
+      <>
+        <Category updateScore={incrementScore} changeMode={changeMode} start={start}></Category>
+        <p id='score'>Score: {score}</p>
+      </>
+    );
+  }
 }

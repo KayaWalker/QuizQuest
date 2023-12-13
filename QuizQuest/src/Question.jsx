@@ -1,10 +1,6 @@
 //TO-DO IN QUESTION.JSX FILE
-//Figure out how to randomize the order of the answer buttons
-//Update the score when the correct button is selected
-//Update the view to be the "next page" when any answer is selected
 
-
-export default function Question({question, display, answerOrder, changeDisplay, updateScore, changeMode, start, checkCorrect}){
+export default function Question({question, display, answerOrder, changeDisplay, updateScore, changeMode, checkCorrect}){
 
    
 
@@ -47,7 +43,7 @@ export default function Question({question, display, answerOrder, changeDisplay,
                 console.log("Wrong Answer")
                 checkCorrect(false)
             }
-            
+
             }, 1000);
         }
 

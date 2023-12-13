@@ -1,11 +1,8 @@
-//TO-DO IN CATEGORY.JSX FILE
 
 import { useState } from 'react';
 import Question from './Question';
 
-export default function Category({updateScore}){
-
-    const [start, changeMode] = useState(true);
+export default function Category({updateScore, changeMode, start}){
     
     //Sets the question state. 
     //question is an object read in from the API
@@ -114,7 +111,6 @@ export default function Category({updateScore}){
              changeDisplay={changeDisplay} 
              updateScore={updateScore}
              changeMode={changeMode}
-             start={start}
              checkCorrect={checkCorrect}
              />
             </div>
