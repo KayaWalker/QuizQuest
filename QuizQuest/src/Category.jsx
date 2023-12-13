@@ -89,6 +89,7 @@ export default function Category({updateScore}){
             );
         }
 
+
     } else {
         return(
             <div>
@@ -98,6 +99,8 @@ export default function Category({updateScore}){
              answerOrder={answerOrder} 
              changeDisplay={changeDisplay} 
              updateScore={updateScore}
+             changeMode={changeMode}
+             start={start}
              />
             </div>
         );

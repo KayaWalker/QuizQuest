@@ -4,7 +4,7 @@
 //Update the view to be the "next page" when any answer is selected
 
 
-export default function Question({question, display, answerOrder, changeDisplay, updateScore}){
+export default function Question({question, display, answerOrder, changeDisplay, updateScore, changeMode, start}){
 
    
 
@@ -35,29 +35,37 @@ export default function Question({question, display, answerOrder, changeDisplay,
         function checkForCorrectAnswer(answer){
             if(answer == correctAnswer){ //calls update score
                 updateScore()
-                console.log("Correct Score")
-                changeDisplay(false)
+                console.log("Correct Score");
+                changeDisplay(false);
+                changeMode(false);
+                console.log(start);
             }else{
                 console.log("Wrong Answer")
-                changeDisplay(false)
+                changeDisplay(false);
+                changeMode(false);
+                console.log(start);
             }
+
         }
 
         //Returns the question and the four answer options in random order
-        return (
-            <>
-                <h1 class='category' dangerouslySetInnerHTML={{__html:writtenCategory}}></h1>
-                <p class='question' dangerouslySetInnerHTML={{__html:writtenQuestion}}></p>
-                <div class='container'>
-                    <button class='child' dangerouslySetInnerHTML={{__html:allAnswers[order[0]]}} onClick={()=>checkForCorrectAnswer(allAnswers[order[0]])}></button>
-                    <button class='child' dangerouslySetInnerHTML={{__html:allAnswers[order[1]]}} onClick={()=>checkForCorrectAnswer(allAnswers[order[1]])}></button>
-                    <button class='child' dangerouslySetInnerHTML={{__html:allAnswers[order[2]]}} onClick={()=>checkForCorrectAnswer(allAnswers[order[2]])}></button>
-                    <button class='child' dangerouslySetInnerHTML={{__html:allAnswers[order[3]]}} onClick={()=>checkForCorrectAnswer(allAnswers[order[3]])}></button>
-                </div>
+        if(display == true){
+            return (
+                <>
+                    <h1 class='category' dangerouslySetInnerHTML={{__html:writtenCategory}}></h1>
+                    <p class='question' dangerouslySetInnerHTML={{__html:writtenQuestion}}></p>
+                    <div class='container'>
+                        <button class='child' dangerouslySetInnerHTML={{__html:allAnswers[order[0]]}} onClick={()=>checkForCorrectAnswer(allAnswers[order[0]])}></button>
+                        <button class='child' dangerouslySetInnerHTML={{__html:allAnswers[order[1]]}} onClick={()=>checkForCorrectAnswer(allAnswers[order[1]])}></button>
+                        <button class='child' dangerouslySetInnerHTML={{__html:allAnswers[order[2]]}} onClick={()=>checkForCorrectAnswer(allAnswers[order[2]])}></button>
+                        <button class='child' dangerouslySetInnerHTML={{__html:allAnswers[order[3]]}} onClick={()=>checkForCorrectAnswer(allAnswers[order[3]])}></button>
+                    </div>
+                    
+                </>
                 
-            </>
-            
-          );    
+            );    
+        }
+
     }
     else return null;
 }
