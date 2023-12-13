@@ -47,12 +47,14 @@ export default function Question({question, display, answerOrder, changeDisplay,
         //Returns the question and the four answer options in random order
         return (
             <>
-                <p dangerouslySetInnerHTML={{__html:writtenQuestion}}></p>
-                <button dangerouslySetInnerHTML={{__html:allAnswers[order[0]]}} onClick={()=>checkForCorrectAnswer(allAnswers[order[0]])}></button>
-                <button dangerouslySetInnerHTML={{__html:allAnswers[order[1]]}} onClick={()=>checkForCorrectAnswer(allAnswers[order[1]])}></button>
-                <button dangerouslySetInnerHTML={{__html:allAnswers[order[2]]}} onClick={()=>checkForCorrectAnswer(allAnswers[order[2]])}></button>
-                <button dangerouslySetInnerHTML={{__html:allAnswers[order[3]]}} onClick={()=>checkForCorrectAnswer(allAnswers[order[3]])}></button>
-        
+                <p class='question' dangerouslySetInnerHTML={{__html:writtenQuestion}}></p>
+                <div class='container'>
+                    <button class='child' dangerouslySetInnerHTML={{__html:allAnswers[order[0]]}} onClick={()=>checkForCorrectAnswer(allAnswers[order[0]])}></button>
+                    <button class='child' dangerouslySetInnerHTML={{__html:allAnswers[order[1]]}} onClick={()=>checkForCorrectAnswer(allAnswers[order[1]])}></button>
+                    <button class='child' dangerouslySetInnerHTML={{__html:allAnswers[order[2]]}} onClick={()=>checkForCorrectAnswer(allAnswers[order[2]])}></button>
+                    <button class='child' dangerouslySetInnerHTML={{__html:allAnswers[order[3]]}} onClick={()=>checkForCorrectAnswer(allAnswers[order[3]])}></button>
+                </div>
+                
             </>
             
           );    

@@ -79,8 +79,14 @@ export default function Category({updateScore}){
     return(
         <>
             <h1>Quiz Quest</h1>
-            <div class='2x2-container'>
-             <Question question={question} display={display} answerOrder={answerOrder} changeDisplay={changeDisplay} updateScore={updateScore}/>
+            <div>
+             <Question 
+             question={question} 
+             display={display} 
+             answerOrder={answerOrder} 
+             changeDisplay={changeDisplay} 
+             updateScore={updateScore}
+             />
             </div>
             <div>
                 <button id="mainBtn" onClick={load}>Generate</button>
