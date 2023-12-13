@@ -57,6 +57,5 @@ export default function Question({question, display, answerOrder, changeDisplay,
             
           );    
     }
-
-
+    else return null;
 }
