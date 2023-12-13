@@ -2,8 +2,16 @@
 import { useState } from 'react';
 import Question from './Question';
 
+<<<<<<< Updated upstream
 export default function Category({updateScore, changeMode, start}){
     
+=======
+export default function Category({updateScore}){
+
+    const [ count, setCount ] = useState(0);
+    const [start, changeMode] = useState(true);
+    const [end, gameFinished] = useState(false);
+>>>>>>> Stashed changes
     //Sets the question state. 
     //question is an object read in from the API
     const [question, changeQuestion] = useState({});
@@ -64,6 +72,9 @@ export default function Category({updateScore, changeMode, start}){
                 console.log(apiResponse.results[0])
                 changeDisplay(true) //sets the question display state
             });
+            setCount(count + 1);
+            console.log('counter:')
+            console.log(count);
         }, 1000);
         
     }
@@ -79,6 +90,14 @@ export default function Category({updateScore, changeMode, start}){
                 </>
             );
         } else {
+            if(count == 5){
+                return(
+                    <>
+                        <h1>The end.</h1>
+                        
+                    </>
+                );
+            }
             if (correct) {
                 return(
                     <>
@@ -98,6 +117,7 @@ export default function Category({updateScore, changeMode, start}){
                     </>
                 );
             }
+
         }
 
 

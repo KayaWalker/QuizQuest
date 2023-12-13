@@ -1,5 +1,9 @@
 //TO-DO IN QUESTION.JSX FILE
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 export default function Question({question, display, answerOrder, changeDisplay, updateScore, changeMode, checkCorrect}){
 
    
