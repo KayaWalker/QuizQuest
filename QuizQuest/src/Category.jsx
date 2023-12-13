@@ -2,16 +2,11 @@
 import { useState } from 'react';
 import Question from './Question';
 
-<<<<<<< Updated upstream
 export default function Category({updateScore, changeMode, start}){
     
-=======
-export default function Category({updateScore}){
-
     const [ count, setCount ] = useState(0);
-    const [start, changeMode] = useState(true);
     const [end, gameFinished] = useState(false);
->>>>>>> Stashed changes
+
     //Sets the question state. 
     //question is an object read in from the API
     const [question, changeQuestion] = useState({});
@@ -90,7 +85,7 @@ export default function Category({updateScore}){
                 </>
             );
         } else {
-            if(count == 5){
+            if(count > 6){  //counts early, actully  5
                 return(
                     <>
                         <h1>The end.</h1>
