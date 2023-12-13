@@ -81,15 +81,26 @@ export default function Category({updateScore}){
                 </div>
                 </>
             );
-        }
-        else{
-            return(
-                <>
-                <div>
-                    <button id="mainBtn" onClick={load}>Next Question</button>
-                </div>
-                </>
-            );
+        } else {
+            if (correct) {
+                return(
+                    <>
+                    <h1>Correct</h1>
+                    <div>
+                        <button id="mainBtn" onClick={load}>Next Question</button>
+                    </div>
+                    </>
+                );
+            } else {
+                return(
+                    <>
+                    <h1>Incorrect</h1>
+                    <div>
+                        <button id="mainBtn" onClick={load}>Next Question</button>
+                    </div>
+                    </>
+                );
+            }
         }
 
 
