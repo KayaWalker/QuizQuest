@@ -3,8 +3,6 @@
 //Update the score when the correct button is selected
 //Update the view to be the "next page" when any answer is selected
 
-import {useState, useEffect} from 'react'
-
 
 export default function Question({question, display, answerOrder, changeDisplay, updateScore}){
 
@@ -37,9 +35,13 @@ export default function Question({question, display, answerOrder, changeDisplay,
             if(answer == correctAnswer){ //calls update score
                 updateScore()
                 console.log("Correct Score")
+                setTimeout(() => {
+                    changeDisplay(false)
+                }, 1000);
                 //TO DO: call the 'next screen' that has the next button inbetween questions
             }else{
                 console.log("Wrong Answer")
+                changeDisplay(false)
                 //TO DO: call the 'next screen' that has the next button inbetween questions
             }
         }

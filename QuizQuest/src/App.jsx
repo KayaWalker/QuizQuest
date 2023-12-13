@@ -26,7 +26,8 @@ export default function App() {
 
   return (
     <>
-      <Category updateScore={updateScore}></Category>
+      <Category updateScore={incrementScore}></Category>
+      <p>Score:{score}</p>
     </>
   );
 }
