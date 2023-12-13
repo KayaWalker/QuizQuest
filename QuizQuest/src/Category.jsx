@@ -18,8 +18,11 @@ export default function Category({updateScore}){
     //Sets the answer order array state
     const [answerOrder, changeAnswerOrder] = useState([]);
 
+    const [correct, checkCorrect] = useState(false);
+
     //Category numbers for calling the API
     const categories = [22,25,32,27];
+
 
     //Returns a random integer between min and max
     //The maximum is exclusive and the minimum is inclusive
@@ -80,6 +83,8 @@ export default function Category({updateScore}){
             );
         }
         else{
+            if(correct)
+            {}
             return(
                 <>
                 <div>
@@ -99,8 +104,12 @@ export default function Category({updateScore}){
              answerOrder={answerOrder} 
              changeDisplay={changeDisplay} 
              updateScore={updateScore}
+<<<<<<< Updated upstream
              changeMode={changeMode}
              start={start}
+=======
+             checkCorrect={checkCorrect}
+>>>>>>> Stashed changes
              />
             </div>
         );

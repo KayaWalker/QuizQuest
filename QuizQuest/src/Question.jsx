@@ -4,7 +4,11 @@
 //Update the view to be the "next page" when any answer is selected
 
 
+<<<<<<< Updated upstream
 export default function Question({question, display, answerOrder, changeDisplay, updateScore, changeMode, start}){
+=======
+export default function Question({question, display, answerOrder, changeDisplay, updateScore, checkCorrect}){
+>>>>>>> Stashed changes
 
    
 
@@ -33,8 +37,12 @@ export default function Question({question, display, answerOrder, changeDisplay,
         //function that checks for the correct answer
         //Gets passed in the answer that was selected by the user
         function checkForCorrectAnswer(answer){
+
+            setTimeout(() => {
+
             if(answer == correctAnswer){ //calls update score
                 updateScore()
+<<<<<<< Updated upstream
                 console.log("Correct Score");
                 changeDisplay(false);
                 changeMode(false);
@@ -46,6 +54,18 @@ export default function Question({question, display, answerOrder, changeDisplay,
                 console.log(start);
             }
 
+=======
+                console.log("Correct Score")
+                changeDisplay(false)
+                checkCorrect(true)
+            }else{
+                console.log("Wrong Answer")
+                changeDisplay(false)
+                checkCorrect(false)
+            }
+
+            }, 1000);
+>>>>>>> Stashed changes
         }
 
         //Returns the question and the four answer options in random order
