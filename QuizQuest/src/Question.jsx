@@ -1,6 +1,6 @@
 //TO-DO IN QUESTION.JSX FILE
 
-export default function Question({question, display, answerOrder, changeDisplay, updateScore, changeMode, checkCorrect}){
+export default function Question({question, display, answerOrder, changeDisplay, updateScore, changeMode, checkCorrect, incrementCount}){
 
    
 
@@ -34,6 +34,7 @@ export default function Question({question, display, answerOrder, changeDisplay,
             
             changeDisplay(false);
             changeMode(false);
+            incrementCount();
 
             if(answer == correctAnswer){ //calls update score
                 updateScore()

@@ -2,9 +2,14 @@
 import { useState } from 'react';
 import Question from './Question';
 
-export default function Category({updateScore, changeMode, start}){
+export default function Category({updateScore, changeMode, start, resetScore}){
     
     const [ count, setCount ] = useState(0);
+    
+    function incrementCount(){
+        setCount(count +1);
+    }
+
     const [end, gameFinished] = useState(false);
 
     //Sets the question state. 
@@ -50,8 +55,8 @@ export default function Category({updateScore, changeMode, start}){
 
         setTimeout(() => {
             
+            //Randomizes the order of answers for the question
             let order = getRandomArrayIndex();
-
             changeAnswerOrder(order);
 
             //The code section below sets the URL for the API for a random category
@@ -67,15 +72,23 @@ export default function Category({updateScore, changeMode, start}){
                 console.log(apiResponse.results[0])
                 changeDisplay(true) //sets the question display state
             });
-            setCount(count + 1);
+
+            // setCount(count + 1); //Keeping track of the number of questions in the game
             console.log('counter:')
             console.log(count);
         }, 1000);
         
     }
+
+    //Function to reset the game
+    function restartGame(){
+        changeMode(true); //changes the display to go back to the start
+        setCount(0); // Resets the counter for question numbers
+        resetScore(); //Resets score to zero
+    }
     
     if (display == false) {
-        if(start == true){
+        if(start == true){ //The start screen
             return(
                 <>
                 <h1>Quiz Quest</h1>
@@ -85,15 +98,16 @@ export default function Category({updateScore, changeMode, start}){
                 </>
             );
         } else {
-            if(count > 6){  //counts early, actully  5
+            if(count > 6){ //End screen that cycles back to main screen
                 return(
                     <>
                         <h1>The end.</h1>
+                        <button id="mainBtn" onClick={restartGame}>Restart</button>
                         
                     </>
                 );
             }
-            if (correct) {
+            if (correct) { //correct answer screen
                 return(
                     <>
                     <h1>Correct</h1>
@@ -102,7 +116,7 @@ export default function Category({updateScore, changeMode, start}){
                     </div>
                     </>
                 );
-            } else {
+            } else { //wrong answer screen
                 return(
                     <>
                     <h1>Incorrect</h1>
@@ -127,6 +141,7 @@ export default function Category({updateScore, changeMode, start}){
              updateScore={updateScore}
              changeMode={changeMode}
              checkCorrect={checkCorrect}
+             incrementCount={incrementCount}
              />
             </div>
         );

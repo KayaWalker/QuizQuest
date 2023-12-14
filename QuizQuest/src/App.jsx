@@ -21,16 +21,21 @@ export default function App() {
     updateScore(score + 1);
   }
 
+  //Resets the score to zero
+  function resetScore(){
+    updateScore(0);
+  }
+
   if (start) {
     return (
       <>
-        <Category updateScore={incrementScore} changeMode={changeMode} start={start}></Category>
+        <Category updateScore={incrementScore} changeMode={changeMode} start={start} resetScore={resetScore}></Category>
       </>
     );
   } else {
     return (
       <>
-        <Category updateScore={incrementScore} changeMode={changeMode} start={start}></Category>
+        <Category updateScore={incrementScore} changeMode={changeMode} start={start} resetScore={resetScore}></Category>
         <p id='score'>Score: {score}</p>
       </>
     );
