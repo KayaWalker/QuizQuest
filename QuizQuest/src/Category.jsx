@@ -98,7 +98,7 @@ export default function Category({updateScore, changeMode, start, resetScore}){
                 </>
             );
         } else {
-            if(count > 2){ //End screen that cycles back to main screen
+            if(count > 6){ //End screen that cycles back to main screen
                 if(correct){
                     return(
                         <>
