@@ -98,14 +98,33 @@ export default function Category({updateScore, changeMode, start, resetScore}){
                 </>
             );
         } else {
-            if(count > 6){ //End screen that cycles back to main screen
-                return(
-                    <>
-                        <h1>The end.</h1>
-                        <button id="mainBtn" onClick={restartGame}>Restart</button>
-                        
-                    </>
-                );
+            if(count > 2){ //End screen that cycles back to main screen
+                if(correct){
+                    return(
+                        <>
+
+                            <h1>Correct</h1>
+                            <div>
+                                <h1>The end.</h1>
+                            
+                                <button id="mainBtn" onClick={restartGame}>Restart</button>
+                            </div>
+                        </>
+                    );
+                }else{
+                    return(
+                        <>
+                            <h1>Incorrect</h1>
+                            <div>
+                                <h1>The end.</h1>
+                            
+                                <button id="mainBtn" onClick={restartGame}>Restart</button>
+                            </div>
+                        </>
+                    );
+                }
+                
+                
             }
             if (correct) { //correct answer screen
                 return(
